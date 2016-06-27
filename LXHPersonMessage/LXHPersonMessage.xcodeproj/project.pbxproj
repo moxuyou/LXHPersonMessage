@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		034892841D2133A500099CDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892831D2133A500099CDF /* main.m */; };
+		034892871D2133A500099CDF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892861D2133A500099CDF /* AppDelegate.m */; };
+		0348928A1D2133A500099CDF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892891D2133A500099CDF /* ViewController.m */; };
+		0348928D1D2133A500099CDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0348928B1D2133A500099CDF /* Main.storyboard */; };
+		0348928F1D2133A500099CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0348928E1D2133A500099CDF /* Assets.xcassets */; };
+		034892921D2133A500099CDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034892901D2133A500099CDF /* LaunchScreen.storyboard */; };
+		0348929C1D21341900099CDF /* LXHPersonMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0348929A1D21341900099CDF /* LXHPersonMessageViewController.m */; };
+		0348929D1D21341900099CDF /* LXHPersonMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0348929B1D21341900099CDF /* LXHPersonMessageViewController.xib */; };
+		034892BB1D2152CA00099CDF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0348929F1D2152CA00099CDF /* LICENSE */; };
+		034892BC1D2152CA00099CDF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892A21D2152CA00099CDF /* MASCompositeConstraint.m */; };
+		034892BD1D2152CA00099CDF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892A51D2152CA00099CDF /* MASConstraint.m */; };
+		034892BE1D2152CA00099CDF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892A71D2152CA00099CDF /* MASConstraintMaker.m */; };
+		034892BF1D2152CA00099CDF /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892A91D2152CA00099CDF /* MASLayoutConstraint.m */; };
+		034892C01D2152CA00099CDF /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892AD1D2152CA00099CDF /* MASViewAttribute.m */; };
+		034892C11D2152CA00099CDF /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892AF1D2152CA00099CDF /* MASViewConstraint.m */; };
+		034892C21D2152CA00099CDF /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892B11D2152CA00099CDF /* NSArray+MASAdditions.m */; };
+		034892C31D2152CA00099CDF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892B41D2152CA00099CDF /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		034892C41D2152CA00099CDF /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892B61D2152CA00099CDF /* View+MASAdditions.m */; };
+		034892C51D2152CA00099CDF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892B91D2152CA00099CDF /* ViewController+MASAdditions.m */; };
+		034892C61D2152CA00099CDF /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 034892BA1D2152CA00099CDF /* README.md */; };
+		034892CF1D2168E800099CDF /* LXHPersonSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892CD1D2168E800099CDF /* LXHPersonSettingTableViewController.m */; };
+		034892D01D2168E800099CDF /* LXHPersonSettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034892CE1D2168E800099CDF /* LXHPersonSettingTableViewController.xib */; };
+		034892D41D216A5300099CDF /* LXHDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034892D21D216A5300099CDF /* LXHDetailTableViewController.m */; };
+		034892D51D216A5300099CDF /* LXHDetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034892D31D216A5300099CDF /* LXHDetailTableViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0348927F1D2133A500099CDF /* LXHPersonMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LXHPersonMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		034892831D2133A500099CDF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		034892851D2133A500099CDF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		034892861D2133A500099CDF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		034892881D2133A500099CDF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		034892891D2133A500099CDF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0348928C1D2133A500099CDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0348928E1D2133A500099CDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		034892911D2133A500099CDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		034892931D2133A500099CDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		034892991D21341900099CDF /* LXHPersonMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHPersonMessageViewController.h; sourceTree = "<group>"; };
+		0348929A1D21341900099CDF /* LXHPersonMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHPersonMessageViewController.m; sourceTree = "<group>"; };
+		0348929B1D21341900099CDF /* LXHPersonMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXHPersonMessageViewController.xib; sourceTree = "<group>"; };
+		0348929F1D2152CA00099CDF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		034892A11D2152CA00099CDF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		034892A21D2152CA00099CDF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		034892A31D2152CA00099CDF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		034892A41D2152CA00099CDF /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		034892A51D2152CA00099CDF /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		034892A61D2152CA00099CDF /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		034892A71D2152CA00099CDF /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		034892A81D2152CA00099CDF /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		034892A91D2152CA00099CDF /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		034892AA1D2152CA00099CDF /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		034892AB1D2152CA00099CDF /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		034892AC1D2152CA00099CDF /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		034892AD1D2152CA00099CDF /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		034892AE1D2152CA00099CDF /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		034892AF1D2152CA00099CDF /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		034892B01D2152CA00099CDF /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		034892B11D2152CA00099CDF /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		034892B21D2152CA00099CDF /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		034892B31D2152CA00099CDF /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		034892B41D2152CA00099CDF /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		034892B51D2152CA00099CDF /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		034892B61D2152CA00099CDF /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		034892B71D2152CA00099CDF /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		034892B81D2152CA00099CDF /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		034892B91D2152CA00099CDF /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		034892BA1D2152CA00099CDF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		034892CC1D2168E800099CDF /* LXHPersonSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHPersonSettingTableViewController.h; sourceTree = "<group>"; };
+		034892CD1D2168E800099CDF /* LXHPersonSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHPersonSettingTableViewController.m; sourceTree = "<group>"; };
+		034892CE1D2168E800099CDF /* LXHPersonSettingTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXHPersonSettingTableViewController.xib; sourceTree = "<group>"; };
+		034892D11D216A5300099CDF /* LXHDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHDetailTableViewController.h; sourceTree = "<group>"; };
+		034892D21D216A5300099CDF /* LXHDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHDetailTableViewController.m; sourceTree = "<group>"; };
+		034892D31D216A5300099CDF /* LXHDetailTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXHDetailTableViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0348927C1D2133A500099CDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034892761D2133A500099CDF = {
+			isa = PBXGroup;
+			children = (
+				034892811D2133A500099CDF /* LXHPersonMessage */,
+				034892801D2133A500099CDF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		034892801D2133A500099CDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0348927F1D2133A500099CDF /* LXHPersonMessage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		034892811D2133A500099CDF /* LXHPersonMessage */ = {
+			isa = PBXGroup;
+			children = (
+				0348929E1D2152CA00099CDF /* Masonry */,
+				034892851D2133A500099CDF /* AppDelegate.h */,
+				034892861D2133A500099CDF /* AppDelegate.m */,
+				034892881D2133A500099CDF /* ViewController.h */,
+				034892891D2133A500099CDF /* ViewController.m */,
+				0348928B1D2133A500099CDF /* Main.storyboard */,
+				0348928E1D2133A500099CDF /* Assets.xcassets */,
+				034892901D2133A500099CDF /* LaunchScreen.storyboard */,
+				034892931D2133A500099CDF /* Info.plist */,
+				034892991D21341900099CDF /* LXHPersonMessageViewController.h */,
+				0348929A1D21341900099CDF /* LXHPersonMessageViewController.m */,
+				0348929B1D21341900099CDF /* LXHPersonMessageViewController.xib */,
+				034892CC1D2168E800099CDF /* LXHPersonSettingTableViewController.h */,
+				034892CD1D2168E800099CDF /* LXHPersonSettingTableViewController.m */,
+				034892CE1D2168E800099CDF /* LXHPersonSettingTableViewController.xib */,
+				034892D11D216A5300099CDF /* LXHDetailTableViewController.h */,
+				034892D21D216A5300099CDF /* LXHDetailTableViewController.m */,
+				034892D31D216A5300099CDF /* LXHDetailTableViewController.xib */,
+				034892821D2133A500099CDF /* Supporting Files */,
+			);
+			path = LXHPersonMessage;
+			sourceTree = "<group>";
+		};
+		034892821D2133A500099CDF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				034892831D2133A500099CDF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0348929E1D2152CA00099CDF /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				0348929F1D2152CA00099CDF /* LICENSE */,
+				034892A01D2152CA00099CDF /* Masonry */,
+				034892BA1D2152CA00099CDF /* README.md */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		034892A01D2152CA00099CDF /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				034892A11D2152CA00099CDF /* MASCompositeConstraint.h */,
+				034892A21D2152CA00099CDF /* MASCompositeConstraint.m */,
+				034892A31D2152CA00099CDF /* MASConstraint+Private.h */,
+				034892A41D2152CA00099CDF /* MASConstraint.h */,
+				034892A51D2152CA00099CDF /* MASConstraint.m */,
+				034892A61D2152CA00099CDF /* MASConstraintMaker.h */,
+				034892A71D2152CA00099CDF /* MASConstraintMaker.m */,
+				034892A81D2152CA00099CDF /* MASLayoutConstraint.h */,
+				034892A91D2152CA00099CDF /* MASLayoutConstraint.m */,
+				034892AA1D2152CA00099CDF /* Masonry.h */,
+				034892AB1D2152CA00099CDF /* MASUtilities.h */,
+				034892AC1D2152CA00099CDF /* MASViewAttribute.h */,
+				034892AD1D2152CA00099CDF /* MASViewAttribute.m */,
+				034892AE1D2152CA00099CDF /* MASViewConstraint.h */,
+				034892AF1D2152CA00099CDF /* MASViewConstraint.m */,
+				034892B01D2152CA00099CDF /* NSArray+MASAdditions.h */,
+				034892B11D2152CA00099CDF /* NSArray+MASAdditions.m */,
+				034892B21D2152CA00099CDF /* NSArray+MASShorthandAdditions.h */,
+				034892B31D2152CA00099CDF /* NSLayoutConstraint+MASDebugAdditions.h */,
+				034892B41D2152CA00099CDF /* NSLayoutConstraint+MASDebugAdditions.m */,
+				034892B51D2152CA00099CDF /* View+MASAdditions.h */,
+				034892B61D2152CA00099CDF /* View+MASAdditions.m */,
+				034892B71D2152CA00099CDF /* View+MASShorthandAdditions.h */,
+				034892B81D2152CA00099CDF /* ViewController+MASAdditions.h */,
+				034892B91D2152CA00099CDF /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0348927E1D2133A500099CDF /* LXHPersonMessage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 034892961D2133A500099CDF /* Build configuration list for PBXNativeTarget "LXHPersonMessage" */;
+			buildPhases = (
+				0348927B1D2133A500099CDF /* Sources */,
+				0348927C1D2133A500099CDF /* Frameworks */,
+				0348927D1D2133A500099CDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LXHPersonMessage;
+			productName = LXHPersonMessage;
+			productReference = 0348927F1D2133A500099CDF /* LXHPersonMessage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		034892771D2133A500099CDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = moxuyou;
+				TargetAttributes = {
+					0348927E1D2133A500099CDF = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 0348927A1D2133A500099CDF /* Build configuration list for PBXProject "LXHPersonMessage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 034892761D2133A500099CDF;
+			productRefGroup = 034892801D2133A500099CDF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0348927E1D2133A500099CDF /* LXHPersonMessage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0348927D1D2133A500099CDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034892921D2133A500099CDF /* LaunchScreen.storyboard in Resources */,
+				0348928F1D2133A500099CDF /* Assets.xcassets in Resources */,
+				034892D01D2168E800099CDF /* LXHPersonSettingTableViewController.xib in Resources */,
+				0348929D1D21341900099CDF /* LXHPersonMessageViewController.xib in Resources */,
+				0348928D1D2133A500099CDF /* Main.storyboard in Resources */,
+				034892D51D216A5300099CDF /* LXHDetailTableViewController.xib in Resources */,
+				034892BB1D2152CA00099CDF /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0348927B1D2133A500099CDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034892CF1D2168E800099CDF /* LXHPersonSettingTableViewController.m in Sources */,
+				034892BE1D2152CA00099CDF /* MASConstraintMaker.m in Sources */,
+				0348929C1D21341900099CDF /* LXHPersonMessageViewController.m in Sources */,
+				0348928A1D2133A500099CDF /* ViewController.m in Sources */,
+				034892BD1D2152CA00099CDF /* MASConstraint.m in Sources */,
+				034892C51D2152CA00099CDF /* ViewController+MASAdditions.m in Sources */,
+				034892BF1D2152CA00099CDF /* MASLayoutConstraint.m in Sources */,
+				034892C21D2152CA00099CDF /* NSArray+MASAdditions.m in Sources */,
+				034892C11D2152CA00099CDF /* MASViewConstraint.m in Sources */,
+				034892C01D2152CA00099CDF /* MASViewAttribute.m in Sources */,
+				034892C41D2152CA00099CDF /* View+MASAdditions.m in Sources */,
+				034892871D2133A500099CDF /* AppDelegate.m in Sources */,
+				034892841D2133A500099CDF /* main.m in Sources */,
+				034892C61D2152CA00099CDF /* README.md in Sources */,
+				034892D41D216A5300099CDF /* LXHDetailTableViewController.m in Sources */,
+				034892BC1D2152CA00099CDF /* MASCompositeConstraint.m in Sources */,
+				034892C31D2152CA00099CDF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0348928B1D2133A500099CDF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0348928C1D2133A500099CDF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		034892901D2133A500099CDF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				034892911D2133A500099CDF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		034892941D2133A500099CDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		034892951D2133A500099CDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		034892971D2133A500099CDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LXHPersonMessage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.moxuyou.LXHPersonMessage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		034892981D2133A500099CDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LXHPersonMessage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.moxuyou.LXHPersonMessage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0348927A1D2133A500099CDF /* Build configuration list for PBXProject "LXHPersonMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034892941D2133A500099CDF /* Debug */,
+				034892951D2133A500099CDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		034892961D2133A500099CDF /* Build configuration list for PBXNativeTarget "LXHPersonMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034892971D2133A500099CDF /* Debug */,
+				034892981D2133A500099CDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 034892771D2133A500099CDF /* Project object */;
+}
