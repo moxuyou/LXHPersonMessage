@@ -45,7 +45,6 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"messageDidScroll" object:self userInfo:@{@"messageDidScroll" : scrollView}];
-    
 }
 
 @end

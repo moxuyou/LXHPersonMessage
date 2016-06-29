@@ -11,6 +11,13 @@
 #import "LXHPersonSettingTableViewController.h"
 #import "Masonry.h"
 
+typedef enum {
+    BtnClickTypePerson = 0,
+    BtnClickTypeDetail,
+    BtnClickTypePersonSetting
+} BtnClickType;
+
+
 @interface LXHPersonMessageViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 /* 装住大imageView的底部View */
@@ -42,9 +49,28 @@
 /** 当前选中显示的tableView */
 @property (nonatomic , weak)UITableView *curronTableView;
 
+
+@property (nonatomic , assign)CGFloat curronY;
+@property (nonatomic , strong)NSMutableDictionary *contentOffsets;
+@property (nonatomic , assign)BtnClickType ClickType;
+
 @end
 
 @implementation LXHPersonMessageViewController
+
+NSString *const personOffsetKey = @"personOffsetKey";
+NSString *const detailOffsetKey = @"detailOffsetKey";
+NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
+
+- (NSMutableDictionary *)contentOffsets {
+    if (!_contentOffsets) {
+        _contentOffsets = [NSMutableDictionary dictionary];
+        _contentOffsets[personOffsetKey] = @(-108);
+        _contentOffsets[detailOffsetKey] = @(-108);
+        _contentOffsets[personSettingOffsetKey] = @(-108);
+    }
+    return _contentOffsets;
+}
 
 //懒加载创建personTableView
 - (UITableView *)personTableView
@@ -108,6 +134,9 @@
     [super viewDidLoad];
     
     self.curronTableView = self.personTableView;
+    self.curronY = self.curronTableView.contentOffset.y;
+    self.contentOffsets[personOffsetKey] = @(self.curronTableView.contentOffset.y);
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.curronTableView.dataSource = self;
     self.curronTableView.delegate = self;
@@ -126,6 +155,7 @@
 {
     UIScrollView *scrollView = note.userInfo[@"messageDidScroll"];
     [self scrollViewDidScroll:scrollView];
+    
 }
 
 - (void)dealloc
@@ -153,16 +183,39 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat offset = self.curronTableView.contentInset.top + self.curronTableView.contentOffset.y;
+    CGFloat offset = self.curronTableView.contentInset.top +self.curronTableView.contentOffset.y;
 //    NSLog(@"%lf", offset);
     if (offset > (self.curronTableView.contentInset.top - self.headView.bounds.size.height - 64)) {
         offset = self.curronTableView.contentInset.top - self.headView.bounds.size.height - 64;
     }
     //控制拖动
+    self.curronY = self.curronTableView.contentOffset.y;
     self.bgImageViewConstraint.constant = 200 - offset;
+
     //控制导航条颜色
 //    NSLog(@"%lf", 1.0 * offset / (self.tableView.contentInset.top - 64 - 44));
     self.navigationController.navigationBar.alpha = 1.0 * offset / (self.curronTableView.contentInset.top - self.headView.bounds.size.height - 64);
+    
+    
+
+    
+
+    if (scrollView.frame.origin.x == 0) {
+        self.contentOffsets[personOffsetKey] = @(self.curronTableView.contentOffset.y);
+        
+        NSLog(@"personOffsetKey%f",self.curronTableView.contentOffset.y);
+    
+    
+    } else if (scrollView.frame.origin.x == self.view.bounds.size.width) {
+        
+        NSLog(@"detailOffsetKey%f",self.curronTableView.contentOffset.y);
+        
+        self.contentOffsets[detailOffsetKey] = @(self.curronTableView.contentOffset.y);
+    } else {
+        
+        NSLog(@"personSettingOffsetKey%f",self.curronTableView.contentOffset.y);
+        self.contentOffsets[personSettingOffsetKey] = @(self.curronTableView.contentOffset.y);
+    }
     
 }
 
@@ -175,7 +228,25 @@
         self.bgScrollView.contentOffset = CGPointMake(0, 0);
     }];
     
+    self.ClickType = BtnClickTypePerson;
+    
     self.curronTableView = self.personTableView;
+    
+    CGFloat offsetY = [self.contentOffsets[personOffsetKey] doubleValue];
+    
+    if (self.curronY > -108) {
+        
+        if (offsetY > -108) {
+            
+            [self.curronTableView setContentOffset:CGPointMake(0, offsetY)];
+        } else {
+            
+            [self.curronTableView setContentOffset:CGPointMake(0, -108)];
+        }
+        
+    } else {
+        [self.curronTableView setContentOffset:CGPointMake(0, self.curronY)];
+    }
 }
 - (IBAction)detailButtonClick:(UIButton *)btn {
     
@@ -187,8 +258,24 @@
         self.bgScrollView.contentOffset = CGPointMake(self.view.bounds.size.width, 0);
     }];
     
+    self.ClickType = BtnClickTypeDetail;
     self.curronTableView = self.detailTableView;
+    CGFloat offsetY = [self.contentOffsets[detailOffsetKey] doubleValue];
     
+    if (self.curronY > -108) {
+        
+        if (offsetY > -108) {
+            
+            [self.curronTableView setContentOffset:CGPointMake(0, offsetY)];
+        } else {
+            
+            [self.curronTableView setContentOffset:CGPointMake(0, -108)];
+        }
+        
+    } else {
+        [self.curronTableView setContentOffset:CGPointMake(0, self.curronY)];
+    }
+
 }
 - (IBAction)personSettingButtonClick:(UIButton *)btn {
     [UIView animateWithDuration:0.25 animations:^{
@@ -199,9 +286,29 @@
         self.bgScrollView.contentOffset = CGPointMake(self.view.bounds.size.width * 2, 0);
     }];
     
+    self.ClickType = BtnClickTypePersonSetting;
     self.curronTableView = self.personSettingTableView;
+    CGFloat offsetY = [self.contentOffsets[personSettingOffsetKey] doubleValue];
+    
+    if (self.curronY > -108) {
+        
+        if (offsetY > -108) {
+            
+            [self.curronTableView setContentOffset:CGPointMake(0, offsetY)];
+        } else {
+            
+            [self.curronTableView setContentOffset:CGPointMake(0, -108)];
+        }
+        
+    } else {
+        [self.curronTableView setContentOffset:CGPointMake(0, self.curronY)];
+    }
+
+
 }
 
-
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+}
 
 @end
