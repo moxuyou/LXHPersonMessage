@@ -53,7 +53,7 @@ typedef enum {
 @property (nonatomic , assign)CGFloat curronY;
 @property (nonatomic , strong)NSMutableDictionary *contentOffsets;
 @property (nonatomic , assign)BtnClickType ClickType;
-
+@property (nonatomic , assign)BOOL isScrolling;
 @end
 
 @implementation LXHPersonMessageViewController
@@ -81,7 +81,6 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
         [self.bgScrollView addSubview:personTableView];
         personTableView.backgroundColor = [UIColor redColor];
         _personTableView = personTableView;
-        NSLog(@"%s",__func__);
     }
     return _personTableView;
 }
@@ -89,7 +88,6 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
 - (UITableView *)detailTableView
 {
     if (_detailTableView == nil) {
-        NSLog(@"%s",__func__);
         LXHDetailTableViewController *detailTableViewVC = [[LXHDetailTableViewController alloc] init];
         [self addChildViewController:detailTableViewVC];
         detailTableViewVC.view.frame = CGRectMake(self.view.bounds.size.width, 0, self.view.bounds.size.width, self.view.bounds.size.height);
@@ -104,7 +102,6 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
 - (UITableView *)personSettingTableView
 {
     if (_personSettingTableView == nil) {
-        NSLog(@"%s",__func__);
         LXHPersonSettingTableViewController *personSettingTableViewVC = [[LXHPersonSettingTableViewController alloc] init];
         [self addChildViewController:personSettingTableViewVC];
         personSettingTableViewVC.view.frame = CGRectMake(self.view.bounds.size.width * 2, 0, self.view.bounds.size.width, self.view.bounds.size.height);
@@ -132,6 +129,7 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.isScrolling = NO;
     
     self.curronTableView = self.personTableView;
     self.curronY = self.curronTableView.contentOffset.y;
@@ -148,9 +146,25 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
     [self.curronTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(messageDidScroll:) name:@"messageDidScroll" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(messageDidScrolling:) name:@"messageDidScrolling" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(messageDidScrolled:) name:@"messageDidScrolled" object:nil];
     
 }
 
+- (void)messageDidScrolling:(NSNotification *)note
+{
+    UIScrollView *scrollView = note.userInfo[@"messageDidScrolling"];
+    //decelerate
+    BOOL decelerate = note.userInfo[@"decelerate"];
+    [self scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    
+}
+- (void)messageDidScrolled:(NSNotification *)note
+{
+    UIScrollView *scrollView = note.userInfo[@"messageDidScrolled"];
+    [self scrollViewDidEndDecelerating:scrollView];
+    
+}
 - (void)messageDidScroll:(NSNotification *)note
 {
     UIScrollView *scrollView = note.userInfo[@"messageDidScroll"];
@@ -181,8 +195,28 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
     return cell;
 }
 
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSLog(@"惯性导致的滚动停止了");
+    self.headView.userInteractionEnabled = YES;
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (decelerate) {
+        NSLog(@"惯性滚动~~~~~~");
+        self.headView.userInteractionEnabled = NO;
+    }else{
+        NSLog(@"一下子滚动停止了");
+        self.headView.userInteractionEnabled = YES;
+    }
+    
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    
     CGFloat offset = self.curronTableView.contentInset.top +self.curronTableView.contentOffset.y;
 //    NSLog(@"%lf", offset);
     if (offset > (self.curronTableView.contentInset.top - self.headView.bounds.size.height - 64)) {
@@ -195,25 +229,18 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
     //控制导航条颜色
 //    NSLog(@"%lf", 1.0 * offset / (self.tableView.contentInset.top - 64 - 44));
     self.navigationController.navigationBar.alpha = 1.0 * offset / (self.curronTableView.contentInset.top - self.headView.bounds.size.height - 64);
-    
-    
-
-    
 
     if (scrollView.frame.origin.x == 0) {
         self.contentOffsets[personOffsetKey] = @(self.curronTableView.contentOffset.y);
-        
-        NSLog(@"personOffsetKey%f",self.curronTableView.contentOffset.y);
-    
     
     } else if (scrollView.frame.origin.x == self.view.bounds.size.width) {
         
-        NSLog(@"detailOffsetKey%f",self.curronTableView.contentOffset.y);
+//        NSLog(@"detailOffsetKey%f",self.curronTableView.contentOffset.y);
         
         self.contentOffsets[detailOffsetKey] = @(self.curronTableView.contentOffset.y);
     } else {
         
-        NSLog(@"personSettingOffsetKey%f",self.curronTableView.contentOffset.y);
+//        NSLog(@"personSettingOffsetKey%f",self.curronTableView.contentOffset.y);
         self.contentOffsets[personSettingOffsetKey] = @(self.curronTableView.contentOffset.y);
     }
     
@@ -234,9 +261,9 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
     
     CGFloat offsetY = [self.contentOffsets[personOffsetKey] doubleValue];
     
-    if (self.curronY > -108) {
+    if (self.curronY >= -108) {
         
-        if (offsetY > -108) {
+        if (offsetY >= -108) {
             
             [self.curronTableView setContentOffset:CGPointMake(0, offsetY)];
         } else {
@@ -247,6 +274,10 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
     } else {
         [self.curronTableView setContentOffset:CGPointMake(0, self.curronY)];
     }
+    
+//    CGPoint offset = self.curronTableView.contentOffset;
+//    (self.curronTableView.contentOffset.y > 0) ? offset.y-- : offset.y++;
+//    [self.curronTableView setContentOffset:offset animated:YES];
 }
 - (IBAction)detailButtonClick:(UIButton *)btn {
     
@@ -262,9 +293,9 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
     self.curronTableView = self.detailTableView;
     CGFloat offsetY = [self.contentOffsets[detailOffsetKey] doubleValue];
     
-    if (self.curronY > -108) {
+    if (self.curronY >= -108) {
         
-        if (offsetY > -108) {
+        if (offsetY >= -108) {
             
             [self.curronTableView setContentOffset:CGPointMake(0, offsetY)];
         } else {
@@ -275,7 +306,7 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
     } else {
         [self.curronTableView setContentOffset:CGPointMake(0, self.curronY)];
     }
-
+    
 }
 - (IBAction)personSettingButtonClick:(UIButton *)btn {
     [UIView animateWithDuration:0.25 animations:^{
@@ -290,9 +321,9 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
     self.curronTableView = self.personSettingTableView;
     CGFloat offsetY = [self.contentOffsets[personSettingOffsetKey] doubleValue];
     
-    if (self.curronY > -108) {
+    if (self.curronY >= -108) {
         
-        if (offsetY > -108) {
+        if (offsetY >= -108) {
             
             [self.curronTableView setContentOffset:CGPointMake(0, offsetY)];
         } else {
@@ -303,12 +334,7 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
     } else {
         [self.curronTableView setContentOffset:CGPointMake(0, self.curronY)];
     }
-
-
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    
-}
 
 @end

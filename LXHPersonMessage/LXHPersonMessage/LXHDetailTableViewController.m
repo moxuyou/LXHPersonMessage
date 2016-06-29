@@ -48,4 +48,19 @@
                                                                                                           
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"messageDidScrolled" object:self userInfo:@{@"messageDidScrolled" : scrollView,@"decelerate" : @"0"}];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (decelerate) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"messageDidScrolling" object:self userInfo:@{@"messageDidScrolling" : scrollView,@"decelerate" : @"1"}];
+    }else{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"messageDidScrolling" object:self userInfo:@{@"messageDidScrolling" : scrollView,@"decelerate" : @"0"}];
+    }
+    
+}
+
 @end

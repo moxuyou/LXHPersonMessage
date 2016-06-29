@@ -47,4 +47,22 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"messageDidScroll" object:self userInfo:@{@"messageDidScroll" : scrollView}];
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSLog(@"PersonSetting惯性导致的滚动停止了");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"messageDidScrolled" object:self userInfo:@{@"messageDidScrolled" : scrollView,@"decelerate" : @"0"}];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (decelerate) {
+        NSLog(@"PersonSetting惯性滚动~~~~~~");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"messageDidScrolling" object:self userInfo:@{@"messageDidScrolling" : scrollView,@"decelerate" : @"1"}];
+    }else{
+        NSLog(@"PersonSetting一下子滚动停止了");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"messageDidScrolling" object:self userInfo:@{@"messageDidScrolling" : scrollView,@"decelerate" : @"0"}];
+    }
+    
+}
+
 @end
