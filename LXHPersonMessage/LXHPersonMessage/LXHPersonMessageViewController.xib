@@ -63,8 +63,8 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4d-d7-bfp">
-                            <rect key="frame" x="227" y="7" width="30" height="30"/>
-                            <state key="normal" title="个人"/>
+                            <rect key="frame" x="227" y="7" width="60" height="30"/>
+                            <state key="normal" title="个人设置"/>
                             <connections>
                                 <action selector="personSettingButtonClick:" destination="-1" eventType="touchUpInside" id="JVj-a9-WL9"/>
                             </connections>
