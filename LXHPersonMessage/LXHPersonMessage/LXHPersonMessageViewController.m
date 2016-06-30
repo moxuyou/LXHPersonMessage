@@ -150,12 +150,12 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(messageDidScrolled:) name:@"messageDidScrolled" object:nil];
     
 }
-
+//[[NSNotificationCenter defaultCenter] postNotificationName:@"messageDidScrolling" object:self userInfo:@{@"messageDidScrolling" : scrollView,@"decelerate" : @"0"}];
 - (void)messageDidScrolling:(NSNotification *)note
 {
     UIScrollView *scrollView = note.userInfo[@"messageDidScrolling"];
     //decelerate
-    BOOL decelerate = note.userInfo[@"decelerate"];
+    BOOL decelerate = [note.userInfo[@"decelerate"] boolValue];
     [self scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
     
 }
