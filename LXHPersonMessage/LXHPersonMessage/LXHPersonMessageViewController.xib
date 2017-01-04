@@ -17,7 +17,7 @@
                 <outlet property="bgView" destination="bjq-aB-NLS" id="Pgu-kM-KPt"/>
                 <outlet property="detailButton" destination="vLe-Tk-uPn" id="XUd-L2-bSN"/>
                 <outlet property="headView" destination="xWE-MR-tcT" id="Eqa-4k-Bng"/>
-                <outlet property="iconImage" destination="6vF-l9-DuC" id="xvQ-Jn-CZs"/>
+                <outlet property="iconImage" destination="emS-9a-gIV" id="hcr-pQ-We0"/>
                 <outlet property="personButton" destination="eGF-xz-pTy" id="7nu-Wr-a1M"/>
                 <outlet property="personSettingButton" destination="w4d-d7-bfp" id="PKE-cj-iRN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -106,6 +106,7 @@
                 <constraint firstAttribute="trailing" secondItem="xWE-MR-tcT" secondAttribute="trailing" id="kze-ZT-nhn"/>
                 <constraint firstItem="bjq-aB-NLS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zqd-Bh-HYL"/>
             </constraints>
+            <point key="canvasLocation" x="-231" y="-72"/>
         </view>
     </objects>
     <resources>
