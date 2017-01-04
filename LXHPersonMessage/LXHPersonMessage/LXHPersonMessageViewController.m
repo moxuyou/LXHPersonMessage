@@ -272,7 +272,7 @@ NSString *const personSettingOffsetKey = @"personSettingOffsetKey";
     }
 //    保存备份，用于控制scrollView停止滚动的方法
     CGPoint offset = self.curronTableView.contentOffset;
-    (self.curronTableView.contentOffset.y > 0) ? offset.y-- : offset.y++;
+//    (self.curronTableView.contentOffset.y > 0) ? offset.y-- : offset.y++;
     [self.curronTableView setContentOffset:offset animated:YES];
 }
 - (IBAction)detailButtonClick:(UIButton *)btn {

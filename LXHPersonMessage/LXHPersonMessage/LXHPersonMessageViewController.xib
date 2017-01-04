@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LXHPersonMessageViewController">
@@ -33,7 +37,7 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="6vF-l9-DuC">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="火影" translatesAutoresizingMaskIntoConstraints="NO" id="emS-9a-gIV">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moxuyou" translatesAutoresizingMaskIntoConstraints="NO" id="emS-9a-gIV">
                             <rect key="frame" x="138" y="50" width="100" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="2dI-b2-Z8e"/>
@@ -41,7 +45,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="0.90093142839999996" blue="0.2233073693" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.90093142839999996" blue="0.2233073693" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="6vF-l9-DuC" secondAttribute="trailing" id="6CT-OB-Cmb"/>
                         <constraint firstAttribute="height" constant="200" id="KOt-Gh-GJa"/>
@@ -55,21 +59,21 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWE-MR-tcT">
                     <rect key="frame" x="0.0" y="200" width="375" height="44"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLe-Tk-uPn">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLe-Tk-uPn">
                             <rect key="frame" x="157" y="7" width="60" height="30"/>
                             <state key="normal" title="详细信息"/>
                             <connections>
                                 <action selector="detailButtonClick:" destination="-1" eventType="touchUpInside" id="sf5-Nr-SK7"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4d-d7-bfp">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4d-d7-bfp">
                             <rect key="frame" x="227" y="7" width="60" height="30"/>
                             <state key="normal" title="个人设置"/>
                             <connections>
                                 <action selector="personSettingButtonClick:" destination="-1" eventType="touchUpInside" id="JVj-a9-WL9"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGF-xz-pTy">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGF-xz-pTy">
                             <rect key="frame" x="87" y="7" width="60" height="30"/>
                             <state key="normal" title="个人信息"/>
                             <connections>
@@ -77,7 +81,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="vLe-Tk-uPn" firstAttribute="centerY" secondItem="xWE-MR-tcT" secondAttribute="centerY" id="2Gf-eG-eMc"/>
                         <constraint firstItem="w4d-d7-bfp" firstAttribute="leading" secondItem="vLe-Tk-uPn" secondAttribute="trailing" constant="10" id="6E4-R4-du6"/>
@@ -89,7 +93,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="bjq-aB-NLS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4ha-94-Toz"/>
                 <constraint firstItem="ATh-2M-hPS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BMf-8o-GX2"/>
@@ -102,11 +106,10 @@
                 <constraint firstAttribute="trailing" secondItem="xWE-MR-tcT" secondAttribute="trailing" id="kze-ZT-nhn"/>
                 <constraint firstItem="bjq-aB-NLS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zqd-Bh-HYL"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>
     </objects>
     <resources>
-        <image name="bg" width="1300" height="975"/>
-        <image name="火影" width="200" height="200"/>
+        <image name="bg" width="1280" height="768"/>
+        <image name="moxuyou" width="154" height="155"/>
     </resources>
 </document>
